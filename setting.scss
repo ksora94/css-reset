@@ -1,0 +1,103 @@
+// Font--------------------------------------------------------------------------------------------
+// --default value:
+$fontFamily: Helvetica,"Microsoft Yahei","Simhei";
+$fontSize: 16px;
+$fontColor: #222;
+$fontSizeCustom: (s: 12px,m: 14px,l: 16px,xl: 18px,xxl: 20px);
+
+
+
+
+// Link--------------------------------------------------------------------------------------------
+// --default value:
+$linkColor: #222;
+$linkUnderline: false;
+$linkHover: true;
+linkHover MUST be true
+%linkHoverStyle{ 
+   text-decoration: underline;
+}
+
+
+
+
+// Heading--------------------------------------------------------------------------------------------
+// --default value:
+$head: false;
+$headSizeIncrease: 2px;
+
+
+
+
+// Form Input--------------------------------------------------------------------------------------------
+// --default value:
+$formType: text password;
+$formPadding: 0;
+$formBlock: true;
+$formFontColor: $fontColor;
+
+
+
+
+// Button--------------------------------------------------------------------------------------------
+// --default value:
+$btnType: submit;
+$btnPadding: 0;
+$btnRadius: 0;
+$btnColor: transparent;
+$btnFontColor: $fontColor;
+$btnBlock: true;
+
+
+
+
+
+
+// Table--------------------------------------------------------------------------------------------
+// --default value:
+$table: false;
+//table MUST be true
+//
+//Table head
+$tableHeadFontSize: $fontSize;
+$tableHeadFontColor: $fontColor;
+$tableHeadColor: transparent;
+$tableHeadBorder: none;
+//
+//Table data
+$tableDataFontSize: $fontSize;
+$tableDataFontColor: $fontColor;
+$tableDataColor: transparent;
+$tableDataBorder: none;
+
+
+
+
+// Image--------------------------------------------------------------------------------------------
+// --default value:
+$imageBlock: true;
+
+
+
+
+
+// ClearFix--------------------------------------------------------------------------------------------
+// --default value:
+$clearFix: true;
+
+
+
+
+
+// Ellipsis--------------------------------------------------------------------------------------------
+// --default value:
+$ellipsis: true;
+
+
+
+
+
+// Pointer--------------------------------------------------------------------------------------------
+// --default value:
+//$pointer: true;
+$pointer: false;

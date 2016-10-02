@@ -1,0 +1,147 @@
+@import "../lib/eric-meyer-reset.scss";
+@import "../setting.scss";
+@import "./default_setting.scss";
+
+@mixin isDefault($property,$value,$defaultValue){
+    @if $value != $defaultValue{
+        #{$property}: $value;
+    }
+}
+
+%font{
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+%focusNoOutline{
+    &:focus {
+        outline: none;
+    }
+}
+
+%pointer{
+    cursor: pointer;
+}
+
+html {
+    @extend %font;
+    color: $fontColor;
+}
+
+@each $fontSizeName,
+$size in $fontSizeCustom {
+    .f-#{$fontSizeName} {
+        font-size: $size;
+    }
+}
+
+a {
+    color: $linkColor;
+    @if $linkUnderline {}
+    @else {
+        text-decoration: none;
+    }
+    @if $linkHover {
+        &:hover {
+            @extend %linkHoverStyle;
+        }
+    }
+}
+
+li{
+    list-style-type: none;
+}
+
+@if $head {
+    @for $i from 1 through 4 {
+        h#{5 - $i} {
+            font-size: $fontSize + $i * $headSizeIncrease;
+        }
+    }
+}
+
+%formInput {
+    @if $formBlock {
+        display: block;
+    }
+    padding: $formPadding;
+    border: none;
+    @extend %font;
+    @include isDefault(color,$formFontColor,$fontColor);
+    @extend %focusNoOutline;
+}
+
+@each $type in $formType {
+    input[type="#{$type}"] {
+        @extend %formInput;
+    }
+}
+
+button {
+    @if $btnBlock {
+        display: block;
+    }
+    @include isDefault(padding,$btnPadding,0);
+    border: none;
+    @include isDefault(border-radius,$btnRadius,0);
+    @extend %font;
+    @include isDefault(color,$btnFontColor,$fontColor);
+    background-color: $btnColor;
+    @extend %pointer;
+    @extend %focusNoOutline;
+}
+
+@each $type in $btnType {
+    input[type="#{$type}"]{
+        @extend button;
+    }
+}
+
+@if $table{
+    th{
+        @include isDefault(font-size,$tableHeadFontSize,$fontSize);
+        @include isDefault(color,$tableHeadFontColor,$fontColor);
+        @include isDefault(background-color,$tableHeadColor,transparent);
+        @include isDefault(border,$tableHeadBorder,none);
+    }
+    td{
+        @include isDefault(font-size,$tableDataFontSize,$fontSize);
+        @include isDefault(color,$tableDataFontColor,$fontColor);
+        @include isDefault(background-color,$tableDataColor,transparent);
+        @include isDefault(border,$tableDataBorder,none);
+    }
+}
+
+@if $imageBlock{
+    img{
+        display: block;
+    }
+}
+
+@if $ellipsis {
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@if $pointer {
+    .pointer {
+        @extend %pointer;
+    }
+}
+
+@if $clearFix {
+    .clearFix:after {
+        content: ' ';
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .clearFix {
+        *zoom: 1;
+    }
+}

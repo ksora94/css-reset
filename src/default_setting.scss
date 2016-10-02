@@ -1,0 +1,56 @@
+// font
+$fontFamily: Helvetica,"Microsoft Yahei","Simhei" !default;
+$fontSize: 16px !default; 
+$fontColor: #000 !default;
+$fontSizeCustom: (s: 12px,m: 14px,l: 16px,xl: 18px,xxl: 20px) !default;
+
+// link
+$linkColor: #000 !default;
+$linkUnderline: false !default;
+$linkHover: true !default;
+%linkHoverStyle{
+    text-decoration: underline;
+}
+
+// heading
+$head: false !default;
+$headSizeIncrease: 2px !default;
+
+//form input
+$formType: text password !default;
+$formPadding: 0 !default;
+$formBlock: true !default;
+$formFontColor: $fontColor !default;
+
+// button
+$btnType: submit !default;
+$btnPadding: 0 !default;
+$btnRadius: 0 !default;
+$btnColor: transparent !default;
+$btnFontColor: $fontColor !default;
+$btnBlock: true !default;
+
+//table
+$table: false !default;
+
+$tableHeadFontSize: $fontSize !default;
+$tableHeadFontColor: $fontColor !default;
+$tableHeadColor: transparent !default;
+$tableHeadBorder: none !default;
+
+$tableDataFontSize: $fontSize !default;
+$tableDataFontColor: $fontColor !default;
+$tableDataColor: transparent !default;
+$tableDataBorder: none !default;
+
+// image
+$imageBlock: true !default;
+
+//clearFix
+$clearFix: true !default;
+
+//ellipsis
+$ellipsis: true !default;
+
+//pointer
+$pointer: true !default;
